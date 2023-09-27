@@ -1,0 +1,33 @@
+@font-face {
+	font-family: Font1;
+	src: url('./曾是青春年少时.ttf');
+}
+@font-face {
+	font-family: Font2;
+	src: url('./昨夜星辰恰似你.ttf');
+}
+@font-face {
+	font-family: Font3;
+	src: url('./以梦为马.ttf');
+}
+@font-face {
+	font-family: Font4;
+	src: url('./默陌信笺手写体.ttf');
+}
+@font-face {
+	font-family: Font5;
+	src: url('./请以你的名字呼唤我.ttf');
+}
+@font-face {
+	font-family: Font6;
+	src: url('./温柔所向为梦想.ttf');
+}
+* {
+	font-family: Font5;
+}
+p {
+	font-size: 20px;
+}
+h1 {
+	font-size: 50px;
+}
