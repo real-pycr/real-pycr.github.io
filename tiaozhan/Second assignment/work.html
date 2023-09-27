@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8"> 
+	<title>第二次课后作业</title>
+	<link rel="icon" href="https://images.cnblogs.com/cnblogs_com/pycr/1916434/o_210210024851cnblogs_icon_simple.png" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="./work.css">
+	<link rel="stylesheet" type="text/css" href="../Typeface/typeface.css">
+</head>
+
+<body>
+	<div class="main">
+		<div id="light"></div>
+	</div>
+	<div class="sidebar">
+		<div class="switch">  
+			<input type="checkbox" id="switch-input">  
+			<label for="switch-input" class="switch-label">  
+				<span class="switch-inner"></span>  
+			</label>  
+		</div>
+		Red: <p><input type="range" id="colorR" name="color" min="0" max="255"> <span id="numberR">128</span></p>
+		Green: <p><input type="range" id="colorG" name="color" min="0" max="255"> <span id="numberG">128</span></p>
+		Blue: <p><input type="range" id="colorB" name="color" min="0" max="255"> <span id="numberB">128</span></p>
+		Brightness: <p><input type="range" id="brightness" name="brightness" min="0" max="200"> <span id="numberBrightness">100%</span></p>
+	</div>
+	<script src="./work.js"></script>
+</body>
+
+</html>
