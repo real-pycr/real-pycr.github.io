@@ -1,0 +1,15 @@
+@font-face {
+	font-family: enFont;
+	src: url("./song.ttf") format("ttf");
+}
+@font-face {
+	font-family: cnFont;
+	src: url("./Anthares.ttf") format("ttf");
+}
+
+:lang(zh) {
+  font-family: 'cnFont', sans-serif;
+}
+:lang(en) {
+  font-family: 'enFont', sans-serif;
+}
