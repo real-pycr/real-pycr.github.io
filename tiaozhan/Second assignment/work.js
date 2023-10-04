@@ -15,6 +15,10 @@ document.getElementById("colorR").addEventListener("click",changeColor);
 document.getElementById("colorG").addEventListener("click",changeColor);
 document.getElementById("colorB").addEventListener("click",changeColor);
 document.getElementById("brightness").addEventListener("click",changeBrightness);
+document.getElementById("colorR").addEventListener("touch",changeColor);
+document.getElementById("colorG").addEventListener("touch",changeColor);
+document.getElementById("colorB").addEventListener("touch",changeColor);
+document.getElementById("brightness").addEventListener("touch",changeBrightness);
 document.getElementById("colorR").addEventListener("keydown",changeColor);
 document.getElementById("colorG").addEventListener("keydown",changeColor);
 document.getElementById("colorB").addEventListener("keydown",changeColor);
@@ -88,10 +92,5 @@ const switchInnerElement=document.querySelector('.switch-inner');
 switchElement.addEventListener("click", fun);
 function fun() {
 	const checked=switchElement.querySelector('input[type="checkbox"]');
-	if (checked.checked) {
-		checked.checked=false;
-	}
-	else {
-		checked.checked=true;
-	}
+	checked.checked=!checked.checked;
 };

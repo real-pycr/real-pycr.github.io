@@ -1,0 +1,359 @@
+@font-face {
+	font-family: song;
+	src: url("./work_files/font/song.ttf");
+}
+
+body {
+	height: 650vh;
+	
+}
+.main {
+	position: sticky;
+	top: -700px;
+	background-image: linear-gradient(#000000 20%, #FF5D5D 80%, #000000 80%);
+	height: 550vh;
+	width: 100%;			/*为什么 100vw 会有水平条？*/
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow: hidden;
+}
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+/*导航栏*/
+.navbar {
+	position: sticky;		/*为什么用 fixed 排版就会乱掉呢？*/
+	top: 0px;
+	width: 100%;			/*为什么 100vw 会有水平移动条？ 水平方向应该没有 margin 塌陷吧？*/
+	height: 8vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/*padding: 10px 100px;*/		/*为什么 padding 左右没有用？*/
+	background-color: black;
+	z-index: 9999;
+	/*overflow: hidden;*/
+}
+.navbar .logo {
+	margin-left: 100px;
+	width: 174px;
+	height: 98px;
+	cursor: pointer;
+}
+.navbar .icon {
+	padding: 5px;
+	margin: 5px;
+	cursor: pointer;
+}
+.logo, .icon {
+	transition: all 0.3s;
+}
+.logo:hover, .icon:hover {
+	transform: scale(1.2);
+}
+.navbar span {
+	color: #8D8A8A;
+	cursor: default;
+}
+
+.dropdown {
+	position: relative;
+	background-color: black;
+	padding: 0px 20px;
+	display: flex;
+	justify-content: center;
+	/*display: inline-block;*/			/*为什么这里要用 inline-block ?*/
+}
+.dropdown > span {
+	cursor: pointer;
+	padding: 5px 0px;
+}
+.dropdown-content {
+	display: none;						/*本来想做出动画，但是一直无法解决 display: none 的冲突，留了一堆石山代码*/
+										/*感觉正解应该是用 JavaScript 来监听 mouseover 从而添加 dropdown-content 元素，但是逻辑暂时还没有想清楚。*/
+	position: absolute;
+	z-index: -1;						/*为什么可以在图片集 1 上方显示？*/
+	width: 90px;
+	text-align: center;
+	top: -5px;
+	opacity: 0;
+	background-color: #b7b7b770;
+	/*padding: 5px;*/
+	border-radius: 5px;
+	transition: all 0.3s;
+}
+span:hover + .dropdown-content, .dropdown-content:hover {	/* runoob 没设置？？？*/
+	display: block;
+	top: 10px;
+	opacity: 1;
+}
+.dropdown-content p {
+	border-radius: 5px;
+	cursor: pointer;
+	padding: 5px;
+}
+.dropdown-content p:hover {
+	/*background-color: #f1f1f1f1;*/
+	background-image: linear-gradient(to right, #f1f1f1, #FABB9F);;
+}
+
+/*回到顶部*/
+#backToTop {
+	position: fixed;
+	right: 20px;
+	bottom: 30px;
+	opacity: 0;
+	transition: all 0.3s;
+}
+
+/*图片集 1 */
+@keyframes fade{
+	0% {opacity: 0;}
+	50% {opacity: 1;}
+	90% {opacity: 1;}
+	100%{opacity: 0;}
+}
+.photos-1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*padding: 0px 100px;*/		/*与 width 是否相冲突？*/
+	width: 80vw;
+	height: 80vh;
+	margin-top: 50px;
+}
+.photos-1 > * {
+	height: 100%;
+	width: 30%;
+	background-position: center;
+	background-size: cover;
+	margin: 0px 15px;
+	animation: fade 7s infinite;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	/*animation-fill-mode: forwards;*/
+}
+.photos-1 .photo-1 {
+	background-image: url("./work_files/1.1.png");
+	/*transform: scale(1);*/	/*完全不会插入图片啊?????*/
+}
+.photos-1 .photo-2 {
+	background-image: url("./work_files/1.2.png");
+}
+.photos-1 .photo-3 {
+	background-image: url("./work_files/1.3.png");
+}
+@keyframes progressBar {
+	0% {width: 0%;}
+	100% {width: 100%;}
+}
+.progress-in {
+	height: 100%;
+	width: 0%;
+	background-color: #FEB737;
+	animation: progressBar 7s linear infinite;
+}
+
+/*搜索*/
+.search-div {
+	position: relative;				/*一定要设置！*/
+	display: flex;					/*改不了 flex-direction ,直接乱套？*/
+	justify-content: center;		/*对 absolute 还是有影响？*/
+	align-items: flex-start;
+	margin: 200px 0px 0px;
+}
+.search-bg {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	overflow: visible;
+	width: 80vw;
+	height: 80vh;
+	background-image: url("./work_files/2.1.png");
+	background-position: center;
+	filter: blur(0px);
+	transition: filter 0.3s;
+}
+.search-bg + div{
+	position: absolute;
+	z-index: 2;
+	top: 20%;
+	width: 50%;
+	height: 8%;
+}
+#search-input {
+	position: absolute;				/*设置成 relative 怎么图标就不见了……*/
+	z-index: 3;
+	width: 100%;
+	height: 100%;
+	border: solid 3px white;
+	border-radius: 50px;
+	background-color: transparent;
+	color: white;
+	font-size: 1.2em;
+	/*font-weight: bold;*/
+	padding-left: 30px;
+	padding-right: 70px;
+}
+#search-input::placeholder {
+	color: white;
+}
+#search-icon {
+	position: absolute;
+	z-index: 4;
+	height: 100%;					/*当 div 和 img 高度设置不一致是怎么解决的？*/
+	margin-left: 90%;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+#search-icon:hover {
+	transform: scale(1.1);
+}
+.search-div + div {
+	width: 60vw;
+	margin-top: 50px;
+	display: flex;
+	justify-content: space-between;
+	color: white;
+}
+.search-bg p {
+	position: absolute;
+	top: 30%;
+	color: white;
+	font-size: 200px;
+	font-weight: bold;
+	white-space: nowrap;			/*!!!*/
+}
+
+
+/*图片集 2 */
+.photos-2 {
+	position: relative;
+	margin: 200px 0px;
+	width: 80vw;
+	height: 100vh;
+}
+.photos-2 img {
+	position: absolute;
+	box-shadow: 0px 0px 10px grey;
+	transition: all 0.5s;
+	border-radius: 10px;
+}
+.photos-2 img:hover {
+	transform: scale(1.1) !important;				/*!!!*/
+	transform: translate(20px, 3px) !important;		/*除此之外还有什么方法可以解决 JavaScript 覆盖 css 中的 hover 的问题*/
+	box-shadow: 0px 0px 30px grey !important;
+	/*z-index: 10;*/
+}
+.photos-2 .photo-1 {
+	left: 0px;
+	top: 150px;
+	height: 200px;
+	width: 200px;
+	z-index: 1;
+}
+.photos-2 .photo-2 {
+	left: 200px;
+	height: 500px;
+	width: 500px;
+	z-index: 2;
+	transform: perspective(2000px) rotateY(-30deg) rotateX(-1deg);
+}
+.photos-2 .photo-3 {
+	left: 750px;
+	top: 250px;
+	height: 350px;
+	width: 350px;
+	z-index: 2;
+}
+.photos-2 .photo-4 {
+	left: 100px;
+	top: 400px;
+	height: 200px;
+	width: 200px;
+	z-index: 1;
+}
+.photos-2 .photo-5 {
+	left: 550px;
+	top: 400px;
+	height: 300px;
+	width: 300px;
+	z-index: 1;
+	transform: rotateY(-30deg) rotateX(-10deg);
+}
+
+/*图片集 3 */
+.photos-3 {
+	width: 80vw;
+	height: 100vh;				/*为什么改高度没啥变化？*/
+	display: grid;
+	grid-template-columns: 1.6fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-gap: 10px;
+}
+.photos-3 * {
+	background-color: grey;
+	width: 100%;
+	height: 100%;
+}
+.photos-3 .photo-1 {
+	grid-row: 1 / 4;
+}
+.photos-3 .photo-2 {
+	grid-column: 2 / 4;
+}
+.photos-3 .photo-3 {
+	grid-row: 2 / 4;
+}
+
+/*视频 + 文本*/
+.last {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 300px 0px 100px;
+	width: 80vw;
+}
+.last video {
+	margin-left: 0px;
+}
+.last div {
+	text-align: center;
+	width: 40%;
+}
+.last .text {
+	font-size: 100px;
+	color: white;
+}
+#typewriter {
+	font-size: 20px;
+	color: white;
+}
+@keyframes cursor {
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+#cursor {
+	font-size: 20px;
+	color: white;
+	animation: cursor 0.7s infinite;
+}
+
+/*页脚*/
+hr {
+	width: 100%;
+	border: 0px;
+	background-color: #FF5D5D;
+	height: 5px;
+}
+.footer {
+	font-family: song;
+	font-size: 25px;
+	color: white;
+	text-align: center;
+	margin: 100px 0px;
+}

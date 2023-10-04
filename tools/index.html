@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" href="https://real-pycr.github.io/assets/icon/icon_48x48.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="https://real-pycr.github.io/assets/typeface/typeface.css">
+	<title>Tools</title>
+	<style>
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		h1 {
+			font-size: 70px;
+			margin: 80px 0px -10px;
+			border-bottom: 5px solid white;
+			transition: all 0.3s;
+			font-family: enFont;
+		}
+		h1:hover {
+			border-bottom: 5px solid green;
+		}
+		body > div {
+			width: 50vw;
+		}
+		h2 {
+			background-color: #ccc;
+			padding: 10px;
+			/*padding-left: 10px;*/
+			margin-top: 100px;
+			transition: all 0.3s;
+			border-left: 5px solid #ccc;
+		}
+		h2:hover {
+			border-left: 5px solid yellow;
+		}
+		.container {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-gap: 20px;
+			padding: 20px;
+		}
+		.box {
+			height: 60px;
+			margin: 0px 10px;
+			background-color: white;
+			border: 1px solid dimgray;
+			transition: all 0.3s;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 5px;
+		}
+		.box:hover {
+			border: 1px solid green;
+			transform: scale(1.1);
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Tools</h1>
+	<div>
+		<h2>矩阵计算</h2>
+		<div class="container">
+			<div class="box">求行列式</div>
+			<div class="box">矩阵乘法</div>
+			<div class="box">伴随矩阵</div>
+			<div class="box">矩阵求逆</div>
+		</div>
+		<h2>社交网址导航</h2>
+		<div class="container">
+			<div class="box">Facebook</div>
+			<div class="box">Facebook</div>
+			<div class="box">Facebook</div>
+			<div class="box">Facebook</div>
+			<div class="box">Facebook</div>
+			<div class="box">Facebook</div>
+			<div class="box">Facebook</div>
+			<div class="box">Facebook</div>
+			<div class="box">Facebook</div>
+			<div class="box">Facebook</div>
+		</div>
+	</div>
+</body>
+
+</html>

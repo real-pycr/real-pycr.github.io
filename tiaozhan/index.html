@@ -5,29 +5,35 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Pengycr's personal website</title>
-	<link rel="icon" href="https://images.cnblogs.com/cnblogs_com/pycr/1916434/o_210210024851cnblogs_icon_simple.png" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="./Typeface/typeface.css">
+	<title>Tiaozhan</title>
+	<link rel="icon" href="https://real-pycr.github.io/assets/icon/icon_48x48.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="https://real-pycr.github.io/assets/typeface/typeface.css">
 	<style>
+		h1 {
+			font-size: 50px;
+		}
+		p {
+			font-size: 20px;
+		}
 		body {
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
 			margin: 0px;
-			height: 100vh;
-			width: 100vw;
+			width: 100%;
 			background-image: linear-gradient(to right, #91BEB9, #37B9E9);
 		}
 		div.container {
-			display: flex;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-gap: 20px;
+			width: 60vw;
 			padding: 20px;
 		}
 		a > div {
-			width: 250px;
 			box-shadow: 0 0 4px gray;
 			padding: 10px;
-			margin: 0px 10px;
 			border-radius: 10px;
 			text-align: center;
 			display: flex;
@@ -53,7 +59,7 @@
 		<a href="./Preview homework/work.html" target="_blank"><div>
 			<img src="./Preview homework/Screenshot.png" alt="Preview" style="width:100%">
 			<p>1.预习作业。</p>
-		</div><a>
+		</div></a>
 		<a href="./First assignment/work.html" target="_blank"><div>
 			<img src="./First assignment/Screenshot.png" alt="First" style="width:100%">
 			<p>2.第一次作业。</p>
@@ -62,6 +68,9 @@
 			<img src="./Second assignment/Screenshot.png" alt="Second" style="width:100%">
 			<p>3.第二次作业。</p>
 		</div></a>
+		<a href="./Third assignment/work.html" target="_blank"><div>
+			<img src="./Third assignment/Screenshot.png" alt="Second" style="width:100%">
+			<p>4.一考作业。</p>
 	</div>
 </body>
 
